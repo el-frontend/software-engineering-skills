@@ -2,6 +2,8 @@
 
 A growing collection of agent skills that cover the **full software engineering development process** — from raw stakeholder request to a shipped, tested, maintainable feature.
 
+This repo encodes the [AI Development Framework V2](docs/framework.md) as composable skills. The framework defines a 5-phase pipeline (PRD → project setup → plan → design → execution); each skill implements one phase.
+
 These skills are built for real engineering work, not vibe coding. They're small, composable, and model-agnostic. They work with Claude Code, Cursor, Copilot, Windsurf, Aider, and any other agent that supports the skills format. Hack them, adapt them, make them yours.
 
 The first skill in the set, [`ai-driven-prd`](skills/ai-driven-prd/SKILL.md), is the front door of the pipeline: it turns a fuzzy request into a PRD an AI agent can actually execute. The rest of the pipeline — TDD, code review, refactoring, debugging, release — is being added skill by skill.
@@ -54,39 +56,28 @@ The fundamentals — clear specs, tight feedback loops, deliberate design — ma
 
 ## Reference
 
-### Specification & Planning
+The categories below mirror the 5 phases of the [AI Development Framework V2](docs/framework.md).
 
-Skills for turning intent into a buildable spec.
+### Setup & Specification
 
-- **[ai-driven-prd](skills/ai-driven-prd/SKILL.md)** — 8-phase pipeline that transforms raw requests into PRDs AI agents can execute. Discovery → PRD draft → acceptance criteria (Gherkin/EARS) → adversarial review → task decomposition → AI-readiness scoring (≥13/15 to pass) → test generation → execution handoff. Triggers on "write a PRD", "spec this feature", "audit my PRD", "is this PRD AI-ready".
+Skills for getting a project ready and turning intent into a buildable spec.
+
+- **[init-claude-project](skills/init-claude-project/SKILL.md)** — Bootstraps a target codebase for AI-driven development. 3-phase pipeline: discover stack → fill `CLAUDE.md` (≤100 lines, no invented commands) → bootstrap `docs/` skeleton (`designs/`, `prd/`, `plans/`). Seeds conventional commits and the markdown plan-checkbox format. Triggers on "init Claude in this repo", "set up CLAUDE.md", "bootstrap docs folder", "/init this project". *(Framework Phase 2.)*
+- **[ai-driven-prd](skills/ai-driven-prd/SKILL.md)** — 8-phase pipeline that transforms raw requests into PRDs AI agents can execute. Discovery → PRD draft → acceptance criteria (Gherkin/EARS) → adversarial review → task decomposition → AI-readiness scoring (≥13/15 to pass) → test generation → execution handoff. Triggers on "write a PRD", "spec this feature", "audit my PRD", "is this PRD AI-ready". *(Framework Phase 1.)*
 
 ### Implementation *(coming)*
 
-Skills for turning a spec into working code.
+Skills that drive code from a spec to a shipped PR. These map to the remaining framework phases.
 
-- **tdd** — Red-green-refactor loop, one vertical slice at a time. *Planned.*
-- **vertical-slice** — Break a PRD into independently-shippable slices. *Planned.*
-- **diagnose** — Disciplined diagnosis loop for hard bugs and performance regressions. *Planned.*
+- **generate-dev-plan** — Turn a PRD requirement (`FR-N`) into a markdown task list with `[x]` checkboxes, ready for execution. *Planned. (Framework Phase 3.)*
+- **declarative-design** — Import Stitch / Claude Design HTML exports into `docs/designs/` and tie them to requirement IDs. *Planned. (Framework Phase 4.)*
+- **execute-plan** — Drive the execution loop: run plan → tests → typecheck → review → conventional commit → PR. *Planned. (Framework Phase 5.)*
 
-### Quality & Review *(coming)*
-
-Skills for keeping the code honest.
-
-- **code-review** — Structured PR review against the original PRD and acceptance criteria. *Planned.*
-- **security-review** — Security pass over pending changes. *Planned.*
-- **architecture-review** — Find deepening opportunities and ball-of-mud risks. *Planned.*
-
-### Maintenance *(coming)*
-
-Skills for keeping the codebase healthy after the feature ships.
-
-- **refactor** — Safe, test-backed refactoring. *Planned.*
-- **deprecate** — Retire a feature, flag, or module without breaking callers. *Planned.*
-- **post-incident** — Turn an incident into a postmortem and a regression test. *Planned.*
+More skills will follow once the Phase 3–5 trio lands and is battle-tested.
 
 ## Status
 
-This repo is in early stages. `ai-driven-prd` is the first complete skill. The categories above describe the target shape of the collection — the rest will land as they're built and battle-tested.
+This repo is in early stages. `ai-driven-prd` and `init-claude-project` are the first two complete skills. The "coming" entries describe the target shape of the collection — the rest will land as they're built.
 
 ## Credits
 

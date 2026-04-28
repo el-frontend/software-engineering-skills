@@ -1,0 +1,54 @@
+# CLAUDE.md
+
+## Project
+
+**Name:** {{PROJECT_NAME}}
+**Stack:** {{STACK_SUMMARY}}
+
+⚠️ NEEDS INPUT: one-line description of what this project is
+
+## Commands
+
+Run these from the repo root.
+
+- **Install:** `{{INSTALL_CMD}}`
+- **Dev:** `{{DEV_CMD}}`
+- **Build:** `{{BUILD_CMD}}`
+- **Test:** `{{TEST_CMD}}`
+- **Lint:** `{{LINT_CMD}}`
+- **Typecheck:** `{{TYPECHECK_CMD}}`
+
+(Remove any line where the project has no equivalent command. Do NOT invent commands.)
+
+## Code style
+
+{{CODE_STYLE_NOTES}}
+
+⚠️ NEEDS INPUT: anything non-obvious about formatting, imports, file organization
+
+## Workflow rules
+
+The four mandatory framework rules:
+
+1. **Designs** live in `docs/designs/`. Each file is named after the requirement ID or feature slug, e.g. `docs/designs/FR-001-login.html`. Open the HTML to understand the target UI before implementing.
+
+2. **Development plans** live in `docs/plans/`. Each plan is named after the requirement ID, e.g. `docs/plans/FR-001.md`. Tasks use markdown checkboxes — mark each `[ ]` → `[x]` as it's completed.
+
+3. **Use [Conventional Commits](https://www.conventionalcommits.org/).** Examples: `feat(auth): add OAuth callback`, `fix(api): handle 429 retries`, `docs: update CLAUDE.md`.
+
+4. **Run tests after every change.** After any code change, run `{{TEST_CMD}}` and `{{TYPECHECK_CMD}}`. Do not declare a task complete until both pass.
+
+   *(Remove this rule if a TDD-driven skill like Superpowers, GSD, or `skills/tdd/` is already installed — those enforce a stricter loop.)*
+
+## Architecture
+
+⚠️ NEEDS INPUT: 2–4 lines on the high-level architecture (entry point, key modules, data flow). Anything longer goes in `docs/architecture.md` and is imported below.
+
+## Imports
+
+Pull in deeper documentation only when relevant:
+
+@docs/framework.md
+{{OPTIONAL_IMPORTS}}
+
+(Add `@docs/architecture.md`, `@docs/conventions.md`, etc. as those files are created. Do NOT inline their content here.)
