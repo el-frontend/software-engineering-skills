@@ -65,19 +65,24 @@ Skills for getting a project ready and turning intent into a buildable spec.
 - **[init-claude-project](skills/init-claude-project/SKILL.md)** — Bootstraps a target codebase for AI-driven development. 3-phase pipeline: discover stack → fill `CLAUDE.md` (≤100 lines, no invented commands) → bootstrap `docs/` skeleton (`designs/`, `prd/`, `plans/`). Seeds conventional commits and the markdown plan-checkbox format. Triggers on "init Claude in this repo", "set up CLAUDE.md", "bootstrap docs folder", "/init this project". *(Framework Phase 2.)*
 - **[ai-driven-prd](skills/ai-driven-prd/SKILL.md)** — 8-phase pipeline that transforms raw requests into PRDs AI agents can execute. Discovery → PRD draft → acceptance criteria (Gherkin/EARS) → adversarial review → task decomposition → AI-readiness scoring (≥13/15 to pass) → test generation → execution handoff. Triggers on "write a PRD", "spec this feature", "audit my PRD", "is this PRD AI-ready". *(Framework Phase 1.)*
 
+### Planning
+
+Skills for turning a spec into an executable plan.
+
+- **[generate-dev-plan](skills/generate-dev-plan/SKILL.md)** — 3-phase pipeline that turns one PRD requirement (`FR-N`) into a markdown task list with `[ ]` checkboxes. Locate requirement in `docs/prd/` → investigate code (prior art, dependencies, ambiguity resolution) → write `docs/plans/<FR-N>.md` as vertical slices, each runnable + tested. Triggers on "make a plan for FR-001", "break this PRD into tasks", "/plan FR-N". *(Framework Phase 3.)*
+
 ### Implementation *(coming)*
 
-Skills that drive code from a spec to a shipped PR. These map to the remaining framework phases.
+Skills that drive code from plan to shipped PR.
 
-- **generate-dev-plan** — Turn a PRD requirement (`FR-N`) into a markdown task list with `[x]` checkboxes, ready for execution. *Planned. (Framework Phase 3.)*
 - **declarative-design** — Import Stitch / Claude Design HTML exports into `docs/designs/` and tie them to requirement IDs. *Planned. (Framework Phase 4.)*
 - **execute-plan** — Drive the execution loop: run plan → tests → typecheck → review → conventional commit → PR. *Planned. (Framework Phase 5.)*
 
-More skills will follow once the Phase 3–5 trio lands and is battle-tested.
+More skills will follow once the Phase 4–5 pair lands and is battle-tested.
 
 ## Status
 
-This repo is in early stages. `ai-driven-prd` and `init-claude-project` are the first two complete skills. The "coming" entries describe the target shape of the collection — the rest will land as they're built.
+This repo is in early stages. `ai-driven-prd`, `init-claude-project`, and `generate-dev-plan` are the first three complete skills — covering Phases 1–3 of the framework. The "coming" entries describe the target shape of the collection — the rest will land as they're built.
 
 ## Credits
 
