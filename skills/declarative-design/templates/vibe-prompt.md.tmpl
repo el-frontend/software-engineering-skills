@@ -1,0 +1,56 @@
+# Vibe-Design Prompt — {{REQUIREMENT_ID}} / {{SLUG}} ({{STATE}})
+
+> Paste this into Stitch (<https://stitch.withgoogle.com/>) or Claude Design. Generate one screen at a time.
+
+## Screen
+
+**{{SLUG}}** in state **{{STATE}}** for requirement **{{REQUIREMENT_ID}}**.
+
+## What to design
+
+{{ONE_LINE_DESCRIPTION}}
+
+> Example: *Login screen showing the populated state — user has begun typing into the email field.*
+
+## Required elements
+
+{{ELEMENT_LIST}}
+
+> Example:
+> - Email input (focused), value = "user@example.com"
+> - Password input (empty), placeholder = "Password"
+> - Primary button "Log in" (enabled)
+> - Secondary link "Forgot password?"
+> - Inline error region (empty in this state)
+
+## Behavior cues to visualize
+
+{{BEHAVIOR_CUES}}
+
+> Example: *Submit button is full-width on mobile, fixed-width on desktop. Inputs use the project's `<FormField>` density (compact, 36px height).*
+
+## Brand / style anchors
+
+{{BRAND_ANCHORS}}
+
+> Example:
+> - Primary color: `#2563eb`
+> - Font: Inter, 16px base
+> - Border radius: 8px
+> - Spacing scale: 4 / 8 / 16 / 24
+> - Match the visual style of `docs/designs/FR-000-signup.html`
+
+## Do NOT design
+
+{{NEGATIVE_CONSTRAINTS}}
+
+> Example:
+> - Do not add a top navigation bar (this screen has none).
+> - Do not invent a "Sign up with Google" button — this requirement is email/password only.
+> - Do not add hover/focus animations — static states only.
+
+## Output
+
+- Export as **HTML** (semantic, no inline scripts, scoped CSS is fine).
+- Provide a **PNG screenshot** at the same aspect ratio as the HTML.
+- Both files MUST visualize the same state — do not stack states in one image.

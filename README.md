@@ -71,18 +71,23 @@ Skills for turning a spec into an executable plan.
 
 - **[generate-dev-plan](skills/generate-dev-plan/SKILL.md)** — 3-phase pipeline that turns one PRD requirement (`FR-N`) into a markdown task list with `[ ]` checkboxes. Locate requirement in `docs/prd/` → investigate code (prior art, dependencies, ambiguity resolution) → write `docs/plans/<FR-N>.md` as vertical slices, each runnable + tested. Triggers on "make a plan for FR-001", "break this PRD into tasks", "/plan FR-N". *(Framework Phase 3.)*
 
+### Design
+
+Skills for bringing UI designs into a project, traceable to requirements.
+
+- **[declarative-design](skills/declarative-design/SKILL.md)** — 3-phase pipeline: identify the screens + states a requirement needs → produce a vibe-design prompt for Stitch / Claude Design (or skip to import) → place HTML + PNG pairs in `docs/designs/<FR-N>-<slug>-<state>.{html,png}` per the naming convention. Triggers on "import these designs", "add screens for FR-001", "vibe design this screen", "/designs FR-N". *(Framework Phase 4.)*
+
 ### Implementation *(coming)*
 
 Skills that drive code from plan to shipped PR.
 
-- **declarative-design** — Import Stitch / Claude Design HTML exports into `docs/designs/` and tie them to requirement IDs. *Planned. (Framework Phase 4.)*
 - **execute-plan** — Drive the execution loop: run plan → tests → typecheck → review → conventional commit → PR. *Planned. (Framework Phase 5.)*
 
-More skills will follow once the Phase 4–5 pair lands and is battle-tested.
+More skills will follow once Phase 5 lands and is battle-tested.
 
 ## Status
 
-This repo is in early stages. `ai-driven-prd`, `init-claude-project`, and `generate-dev-plan` are the first three complete skills — covering Phases 1–3 of the framework. The "coming" entries describe the target shape of the collection — the rest will land as they're built.
+This repo is in early stages. `ai-driven-prd`, `init-claude-project`, `generate-dev-plan`, and `declarative-design` are the first four complete skills — covering Phases 1–4 of the framework. Only `execute-plan` (Phase 5) remains.
 
 ## Credits
 
