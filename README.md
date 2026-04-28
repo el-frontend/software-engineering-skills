@@ -4,11 +4,11 @@ A growing collection of agent skills that cover the **full software engineering 
 
 These skills are built for real engineering work, not vibe coding. They're small, composable, and model-agnostic. They work with Claude Code, Cursor, Copilot, Windsurf, Aider, and any other agent that supports the skills format. Hack them, adapt them, make them yours.
 
-The first skill in the set, [`ai-driven-prd`](.agents/skills/ai-driven-prd/SKILL.md), is the front door of the pipeline: it turns a fuzzy request into a PRD an AI agent can actually execute. The rest of the pipeline — TDD, code review, refactoring, debugging, release — is being added skill by skill.
+The first skill in the set, [`ai-driven-prd`](skills/ai-driven-prd/SKILL.md), is the front door of the pipeline: it turns a fuzzy request into a PRD an AI agent can actually execute. The rest of the pipeline — TDD, code review, refactoring, debugging, release — is being added skill by skill.
 
 ## Quickstart
 
-Skills live under `.agents/skills/`. Point your coding agent at this directory, or copy individual skills into your project's agent config.
+Skills live under `skills/`. Point your coding agent at this directory, or copy individual skills into your project's agent config.
 
 ```bash
 git clone git@github.com:el-frontend/software-engineering-skills.git
@@ -30,7 +30,7 @@ These skills exist to fix the failure modes that show up over and over when AI a
 
 **The Fix** is a PRD that is **explicit, atomic, machine-verifiable, and self-contained** — one the agent can execute without filling gaps from "the average of the internet."
 
-That's [`ai-driven-prd`](.agents/skills/ai-driven-prd/SKILL.md): an 8-phase pipeline from Socratic discovery → PRD draft → acceptance criteria → adversarial review → task decomposition → AI-readiness gate → test generation → handoff. Every phase has a human gate. The output is a PRD agents can actually build from.
+That's [`ai-driven-prd`](skills/ai-driven-prd/SKILL.md): an 8-phase pipeline from Socratic discovery → PRD draft → acceptance criteria → adversarial review → task decomposition → AI-readiness gate → test generation → handoff. Every phase has a human gate. The output is a PRD agents can actually build from.
 
 ### #2: The Process Is Owned By The Tool, Not You
 
@@ -58,7 +58,7 @@ The fundamentals — clear specs, tight feedback loops, deliberate design — ma
 
 Skills for turning intent into a buildable spec.
 
-- **[ai-driven-prd](.agents/skills/ai-driven-prd/SKILL.md)** — 8-phase pipeline that transforms raw requests into PRDs AI agents can execute. Discovery → PRD draft → acceptance criteria (Gherkin/EARS) → adversarial review → task decomposition → AI-readiness scoring (≥13/15 to pass) → test generation → execution handoff. Triggers on "write a PRD", "spec this feature", "audit my PRD", "is this PRD AI-ready".
+- **[ai-driven-prd](skills/ai-driven-prd/SKILL.md)** — 8-phase pipeline that transforms raw requests into PRDs AI agents can execute. Discovery → PRD draft → acceptance criteria (Gherkin/EARS) → adversarial review → task decomposition → AI-readiness scoring (≥13/15 to pass) → test generation → execution handoff. Triggers on "write a PRD", "spec this feature", "audit my PRD", "is this PRD AI-ready".
 
 ### Implementation *(coming)*
 
