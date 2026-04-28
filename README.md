@@ -77,17 +77,15 @@ Skills for bringing UI designs into a project, traceable to requirements.
 
 - **[declarative-design](skills/declarative-design/SKILL.md)** — 3-phase pipeline: identify the screens + states a requirement needs → produce a vibe-design prompt for Stitch / Claude Design (or skip to import) → place HTML + PNG pairs in `docs/designs/<FR-N>-<slug>-<state>.{html,png}` per the naming convention. Triggers on "import these designs", "add screens for FR-001", "vibe design this screen", "/designs FR-N". *(Framework Phase 4.)*
 
-### Implementation *(coming)*
+### Implementation
 
 Skills that drive code from plan to shipped PR.
 
-- **execute-plan** — Drive the execution loop: run plan → tests → typecheck → review → conventional commit → PR. *Planned. (Framework Phase 5.)*
-
-More skills will follow once Phase 5 lands and is battle-tested.
+- **[execute-plan](skills/execute-plan/SKILL.md)** — 3-phase pipeline that turns a checkbox plan into a PR. Load context (plan + PRD + designs + CLAUDE.md) → task loop (one task per commit: red → green → typecheck → conventional commit + `[x]` flip in same diff) → finalize (score 8-point checklist, propose PR body, surface CLAUDE.md feedback notes). Three-strike rule, scope-contained, no auto-chaining. Triggers on "execute the plan", "implement docs/plans/FR-001.md", "ship FR-001", "/execute FR-N". *(Framework Phase 5.)*
 
 ## Status
 
-This repo is in early stages. `ai-driven-prd`, `init-claude-project`, `generate-dev-plan`, and `declarative-design` are the first four complete skills — covering Phases 1–4 of the framework. Only `execute-plan` (Phase 5) remains.
+All five framework phases now have a skill. `ai-driven-prd`, `init-claude-project`, `generate-dev-plan`, `declarative-design`, and `execute-plan` form the full pipeline from raw stakeholder request → shipped PR. The skills will continue to evolve as they're battle-tested.
 
 ## Credits
 

@@ -1,0 +1,47 @@
+# Task Execution — {{TASK_ID}}
+
+> Internal scaffold. Use this to structure your work on a single task. Not committed to the repo.
+
+## Task
+
+**ID:** {{TASK_ID}}
+**Description:** {{TASK_DESCRIPTION}}
+**Files:** {{TASK_FILES}}
+**AC:** {{TASK_ACS}}
+**Test:** {{TASK_TEST}}
+
+## Plan for this task
+
+1. Re-read AC(s): {{TASK_ACS}}
+2. {{RED_BAR_STEP}}  ← write/modify the failing test, run, confirm it fails for the right reason
+3. {{IMPLEMENT_STEP}}  ← write the minimal code to pass
+4. {{REFACTOR_STEP}}  ← cleanup if needed (no behavior change)
+5. Verify: `{{TEST_CMD}}` → green, `{{TYPECHECK_CMD}}` → clean
+6. Stage: {{STAGED_FILES}} + `docs/plans/{{REQUIREMENT_ID}}.md`
+7. Commit: `{{COMMIT_TYPE}}({{SCOPE}}): {{COMMIT_SUMMARY}}`
+   - Body: `Refs {{TASK_ID}}`
+8. Verify `git log -1 --stat` shows checkbox flip + code together
+
+## Failure recovery
+
+| Strikes | Action |
+|---------|--------|
+| 1 | Read the failure, fix, retry |
+| 2 | Read the failure carefully, check assumptions, retry |
+| 3 | STOP. Surface to user — Phase 1 missed something |
+
+## Out-of-scope discovery
+
+If you find something that should change but isn't in the task's file list:
+
+- One-line obvious fix → include it, note in commit body
+- Larger → STOP, surface to user, do NOT silently expand the diff
+
+## Done condition for this task
+
+- [ ] Test(s) green
+- [ ] Typecheck clean
+- [ ] Lint clean (if configured)
+- [ ] Commit landed with conventional format + `Refs {{TASK_ID}}`
+- [ ] `docs/plans/{{REQUIREMENT_ID}}.md` checkbox `[x]` in same commit
+- [ ] Working tree clean
