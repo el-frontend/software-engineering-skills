@@ -53,10 +53,12 @@ Each phase has an INPUT, an OUTPUT artifact, and a **HUMAN GATE** before advanci
 
 ## What NOT to do
 
-- DO NOT copy the existing `ai-driven-prd` PRD template into the target repo. This skill bootstraps the *project*, not the spec.
-- DO NOT add aspirational rules ("we should write tests", "we prefer functional style") — only encode rules the team has actually agreed to.
-- DO NOT inline long explanations. CLAUDE.md is loaded every conversation; verbose CLAUDE.md = ignored CLAUDE.md.
-- DO NOT silently overwrite an existing `CLAUDE.md` — diff it, ask the user which sections to keep.
+See [references/anti-patterns.md](references/anti-patterns.md). Top four to watch:
+
+- **Inventing build/test commands.** Every command in CLAUDE.md MUST come from a manifest you actually read. If you can't verify, write `⚠️ NEEDS INPUT:`.
+- **Bloated CLAUDE.md.** Hard cap 100 lines. *"Would removing this cause Claude to make a mistake?"* — if no, delete.
+- **Aspirational rules.** Only encode rules the team actually enforces (linter, CI, agreed convention). No "we should write tests" if no one does.
+- **Silent overwrite of existing CLAUDE.md.** Always diff and ask which sections to keep.
 
 ## References
 
@@ -64,5 +66,6 @@ Each phase has an INPUT, an OUTPUT artifact, and a **HUMAN GATE** before advanci
 - docs/README template: [templates/docs-readme.md.tmpl](templates/docs-readme.md.tmpl)
 - Phase prompts: [prompts/01-discover-stack.md](prompts/01-discover-stack.md), [prompts/02-fill-claude-md.md](prompts/02-fill-claude-md.md), [prompts/03-bootstrap-docs.md](prompts/03-bootstrap-docs.md)
 - Handoff checklist: [references/checklist.md](references/checklist.md)
+- Anti-patterns and remedies: [references/anti-patterns.md](references/anti-patterns.md)
 - Conventional commits + plan format: [references/conventions.md](references/conventions.md)
 - Source framework: [../../docs/framework.md](../../docs/framework.md)

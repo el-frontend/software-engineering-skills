@@ -52,11 +52,13 @@ Phase 2 runs **once per task** and loops until every `[ ]` becomes `[x]`. Each i
 
 ## What NOT to do
 
+See [references/anti-patterns.md](references/anti-patterns.md) for full failure-mode catalog. Top five:
+
 - **DO NOT batch tasks.** Two `[x]` in one commit breaks traceability.
 - **DO NOT mark `[x]` with failing tests.** The checkbox is a green-bar contract.
-- **DO NOT auto-open the PR.** Phase 3 produces a PR *description*; the user opens the PR (or explicitly tells you to).
+- **DO NOT auto-open the PR.** Phase 3 produces a PR *description*; the user opens it.
 - **DO NOT silently fix unrelated bugs.** Note them; don't blend them into the plan's commits.
-- **DO NOT touch `docs/prd/` or `docs/plans/<other-FR>.md` files.** This skill changes one plan's checkboxes and the implementation files. Other plans are out of scope.
+- **DO NOT touch `docs/prd/` or `docs/plans/<other-FR>.md`.** This skill changes one plan's checkboxes and the implementation files. Other plans are out of scope.
 
 ## References
 

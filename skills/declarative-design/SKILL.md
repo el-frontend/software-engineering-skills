@@ -51,17 +51,18 @@ Phase 2 is the only phase that **does not produce a file inside the repo** — i
 
 ## What NOT to do
 
-See [references/checklist.md](references/checklist.md) and these top failure modes:
+See [references/anti-patterns.md](references/anti-patterns.md). Top three to watch:
 
-- **Bundling unrelated requirements**: do NOT put `FR-001` and `FR-002` designs in one file. One file pair per FR-N + state.
-- **Inventing states**: don't add an `error` design just because the agent expects one — confirm the requirement actually needs error UI before generating.
-- **Stale designs**: if the PRD changed after designs were placed, flag the design as stale (`<FR-N>-<slug>.STALE.html`) and rerun Phase 2 — do not silently use outdated designs.
+- **Bundling unrelated requirements.** One file pair per `<FR-N>-<slug>[-<state>]`. No `auth-screens.html` covering FR-001 + FR-002 + FR-003.
+- **Inventing states.** Phase 1's screen list is the contract. Don't add a "loading" or "error" design unless the requirement calls for one.
+- **Stale designs.** When the PRD changes meaningfully, rename affected designs to `<FR-N>-<slug>.STALE.html` and rerun Phase 2 — never silently use outdated designs.
 
 ## References
 
 - Vibe-design prompt scaffold: [templates/vibe-prompt.md.tmpl](templates/vibe-prompt.md.tmpl)
 - Phase prompts: [prompts/01-identify-screens.md](prompts/01-identify-screens.md), [prompts/02-acquire-designs.md](prompts/02-acquire-designs.md), [prompts/03-place-designs.md](prompts/03-place-designs.md)
 - 6-point handoff checklist: [references/checklist.md](references/checklist.md)
+- Anti-patterns and remedies: [references/anti-patterns.md](references/anti-patterns.md)
 - Naming convention details: [references/naming.md](references/naming.md)
 - Source framework: [../../docs/framework.md](../../docs/framework.md)
 - Tooling: [Stitch](https://stitch.withgoogle.com/) — Google's vibe-design tool. [Claude Design](https://claude.com/) — Anthropic's design tool.
