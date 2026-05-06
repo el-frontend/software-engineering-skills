@@ -1,6 +1,6 @@
 ---
 name: execute-plan
-description: Use when the user wants to implement a development plan from docs/plans/<FR-N>.md against the target codebase. Drives the task loop: read the plan, implement each `[ ]` task as a vertical slice (code + test + typecheck + lint), commit per task with conventional commits, mark `[x]` in the same commit, then finalize by proposing a PR. Triggers on "execute the plan", "implement docs/plans/FR-001.md", "run the dev loop on FR-001", "ship FR-001", "/execute FR-N".
+description: Use when the user wants to implement a development plan from docs/plans/<FR-N>.md against the target codebase. Drives the task loop — reads the plan, implements each `[ ]` task as a vertical slice (code + test + typecheck + lint), commits per task with conventional commits, marks `[x]` in the same commit, then finalizes by proposing a PR. Triggers on "execute the plan", "implement docs/plans/FR-001.md", "run the dev loop on FR-001", "ship FR-001", "/execute FR-N".
 ---
 
 # Execute Plan
